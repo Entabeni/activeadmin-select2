@@ -17,7 +17,7 @@ Add `activeadmin`, `jquery-rails` and `select2-rails` to your Gemfile:
 And add `activeadmin-select2` to your Gemfile:
 
 ```ruby
-   gem 'activeadmin-select2', github: 'mfairburn/activeadmin-select2'
+   gem 'activeadmin-select2', github: 'Entabeni/activeadmin-select2'
 ```
 
 Add the activeadmin-select2 calls to the active_admin stylesheets and javascripts with:
@@ -40,7 +40,7 @@ Standard :select filters will automagically be converted to Select2 filters.  If
 ```ruby
    ActiveAdmin.register Products do
 
-      filter :fruits, as: :select2_multiple, collection: [:apples, :bananas, :oranges]
+      filter :author, as: :select2_multiple, collection: proc { Author.all }
 
    end
 ```
